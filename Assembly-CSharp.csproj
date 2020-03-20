@@ -63,7 +63,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Appearance_Randomizer.cs" />
+    <Compile Include="Assets\Scripts\ButtonHelper.cs" />
+    <Compile Include="Assets\Scripts\GameMechanics.cs" />
+    <Compile Include="Assets\Scripts\Gate.cs" />
+    <Compile Include="Assets\Scripts\GateManager.cs" />
+    <Compile Include="Assets\Scripts\PowerUpManager.cs" />
+    <Compile Include="Assets\Scripts\Skull.cs" />
+    <Compile Include="Assets\Scripts\SkullCleanup.cs" />
+    <Compile Include="Assets\Scripts\TouchHandle.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
