@@ -409,6 +409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f01608f01273a944290deda9d5193afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gateManager: {fileID: 272567126}
   pointText: {fileID: 31810120}
   candles:
   - {fileID: 1768682564}

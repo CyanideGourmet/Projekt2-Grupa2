@@ -65,8 +65,10 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ButtonHelper.cs" />
     <Compile Include="Assets\Scripts\GameMechanics.cs" />
+    <Compile Include="Assets\Scripts\GameOverHandler.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\GateManager.cs" />
+    <Compile Include="Assets\Scripts\HighScoreFetcher.cs" />
     <Compile Include="Assets\Scripts\PowerUpManager.cs" />
     <Compile Include="Assets\Scripts\Skull.cs" />
     <Compile Include="Assets\Scripts\SkullCleanup.cs" />
