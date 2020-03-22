@@ -49,9 +49,12 @@ public class Gate : MonoBehaviour
     }
     private void Update()
     {
-        if (secondsBetweenSkulls > secondsBetweenSkullsMin) { secondsBetweenSkulls -= secondsBetweenSkullsDecrease * Time.deltaTime; }
-        else if (secondsBetweenSkulls < secondsBetweenSkullsMin) { secondsBetweenSkulls = secondsBetweenSkullsMin; }
-        skullSpeed += skullSpeedIncrease * Time.deltaTime;
+        if (!gateManager.pause)
+        {
+            if (secondsBetweenSkulls > secondsBetweenSkullsMin) { secondsBetweenSkulls -= secondsBetweenSkullsDecrease * Time.deltaTime; }
+            else if (secondsBetweenSkulls < secondsBetweenSkullsMin) { secondsBetweenSkulls = secondsBetweenSkullsMin; }
+            skullSpeed += skullSpeedIncrease * Time.deltaTime;
+        }
         foreach(Skull skull in skulls)
         {
             Vector2 velocity = directionVectorMap[direction] * skullSpeed;

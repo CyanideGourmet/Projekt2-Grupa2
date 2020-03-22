@@ -63,6 +63,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\AltairHandler.cs" />
+    <Compile Include="Assets\Scripts\AreYouSure.cs" />
+    <Compile Include="Assets\Scripts\AudioControll.cs" />
     <Compile Include="Assets\Scripts\ButtonHelper.cs" />
     <Compile Include="Assets\Scripts\GameMechanics.cs" />
     <Compile Include="Assets\Scripts\GameOverHandler.cs" />

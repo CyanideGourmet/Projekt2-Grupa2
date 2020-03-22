@@ -25,7 +25,8 @@ public class GameMechanics : MonoBehaviour
         pointReward = initialPoints;
         foreach (Image candle in candles)
         {
-            candle.color = Color.red;
+            candle.sprite = Resources.Load<Sprite>("Candle_F");
+            candle.transform.localScale = new Vector3(2, 2, 2);
         }
         points = 0;
         health = 4;
@@ -40,7 +41,7 @@ public class GameMechanics : MonoBehaviour
     public void Damage()
     {
         health -= 1;
-        candles[health].color = Color.white;
+        candles[health].sprite = Resources.Load<Sprite>("Candle_NoF");
         if(health == 0)
         {
             gateManager.pause = true;
@@ -56,7 +57,11 @@ public class GameMechanics : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(pointsIncreaseTimer);
+            for(float timer = pointsIncreaseTimer; timer >= 0; timer -= Time.deltaTime)
+            {
+                while (gateManager.pause) { yield return null; }
+                yield return null;
+            }
             pointReward += pointsIncrease;
         }
     }

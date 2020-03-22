@@ -44,13 +44,13 @@ public class Skull : MonoBehaviour
         switch(PowerType)
         {
             case PowerUpType.SPEED:
-                this.GetComponent<SpriteRenderer>().color = Color.red;
+                this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BUFF_3");
                 break;
             case PowerUpType.SLOW:
-                this.GetComponent<SpriteRenderer>().color = Color.green;
+                this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BUFF_2");
                 break;
             case PowerUpType.CLOSE:
-                this.GetComponent<SpriteRenderer>().color = Color.magenta;
+                this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BUFF_1");
                 break;
         }
     }

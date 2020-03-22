@@ -66,7 +66,11 @@ public class GateManager : MonoBehaviour
     }
     private IEnumerator OpenGate(int gateNr, float time)
     {
-        yield return new WaitForSeconds(time);
+        for (float timer = time; timer >= 0; timer -= Time.deltaTime)
+        {
+            while (pause) { yield return null; }
+            yield return null;
+        }
         gates[gateNr].Active = true;
     }
 }
