@@ -60,7 +60,7 @@ public class Gate : MonoBehaviour
             Vector2 velocity = directionVectorMap[direction] * skullSpeed;
             if (SpeedUpActive)
             {
-                velocity *= 2;
+                velocity *= 1.25f;
             }
             if (SlowDownActive)
             {

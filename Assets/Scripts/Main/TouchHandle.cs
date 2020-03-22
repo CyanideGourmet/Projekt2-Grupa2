@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,7 +32,7 @@ public class TouchHandle : MonoBehaviour
                                 gameMechanics.AddPoints(gameMechanics.pointReward);
                                 if(gameMechanics.MorePointActive)
                                 {
-                                    gameMechanics.AddPoints(gameMechanics.pointReward * 2);
+                                    gameMechanics.AddPoints(Convert.ToInt32(gameMechanics.pointReward * 0.5f));
                                 }
                             }
                             else if(hitInformation.collider.GetComponent<Skull>().IsPowerUp)

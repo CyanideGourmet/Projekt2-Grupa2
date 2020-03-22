@@ -8,6 +8,7 @@ public class GameMechanics : MonoBehaviour
 {
 
     public GateManager gateManager;
+    public AltarHandler altarHandler;
     public Text pointText;
     public Image[] candles;
     public int initialPoints = 100;
@@ -37,6 +38,7 @@ public class GameMechanics : MonoBehaviour
     {
         points += pointsToAdd;
         pointText.text = points.ToString();
+        altarHandler.SetAltar();
     }
     public void Damage()
     {

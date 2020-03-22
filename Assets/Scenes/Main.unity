@@ -410,6 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gateManager: {fileID: 272567126}
+  altarHandler: {fileID: 567301527}
   pointText: {fileID: 31810120}
   candles:
   - {fileID: 1768682564}
@@ -508,7 +509,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe2b76c350a254d88da44cd6133d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  altarValues: 0000000010270000204e000030750000409c000050c3000060ea00007011010080380100
 --- !u!1 &586048062
 GameObject:
   m_ObjectHideFlags: 0
@@ -1238,7 +1238,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 755c65b2d99e1d641a86cf3766ba85be, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 7f1d84ad9ae14554a8b5cb40e9a75dff, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 0.39
   m_Pitch: 1

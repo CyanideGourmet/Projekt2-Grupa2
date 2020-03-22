@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class AltarHandler : MonoBehaviour
 {
-    public int[] altarValues = new int[9] { 0, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000 };
+    private int[] altarValues = new int[9] { 0, 100, 200, 300, 450, 700, 1200, 2000, 3000 };
     private static Dictionary<int, string> altars;
     void Start()
     {
@@ -25,12 +25,19 @@ public class AltarHandler : MonoBehaviour
                 { altarValues[8], "Altar_9" },
             };
         }
+        SetAltar();
+    }
+    public void SetAltar()
+    {
         int highScore = PlayerPrefs.GetInt("highscore", 0);
-        int temp = highScore / 80000;
-        if(temp >= 1) { GetComponent<Image>().sprite = Resources.Load<Sprite>(altars[80000]); }
-        else
+        string filename = "";
+        foreach (KeyValuePair<int, string> pair in altars)
         {
-            GetComponent<Image>().sprite = Resources.Load<Sprite>(altars[(highScore / 10000) * 10000]);
+            if (highScore >= pair.Key)
+            {
+                filename = pair.Value;
+            }
         }
+        GetComponent<Image>().sprite = Resources.Load<Sprite>(filename);
     }
 }
