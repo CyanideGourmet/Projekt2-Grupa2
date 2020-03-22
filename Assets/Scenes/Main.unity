@@ -342,9 +342,9 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 8704ea94af06f164f899dcba2eb1cc7c, type: 3}
   - {fileID: 21300000, guid: fbe5453bb53d3f3498f6a330f41a1099, type: 3}
   - {fileID: 21300000, guid: b79c0642084da10488cd2b868c9f1495, type: 3}
-  gate2OpenTime: 30
-  gate3aOpenTime: 60
-  gate3bOpenTime: 120
+  gate2OpenTime: 8
+  gate3aOpenTime: 25
+  gate3bOpenTime: 62
   reference: {fileID: 610132633}
 --- !u!1 &315657153
 GameObject:
@@ -416,9 +416,9 @@ MonoBehaviour:
   - {fileID: 787852733}
   - {fileID: 114351442}
   - {fileID: 2028533350}
-  initialPoints: 100
-  pointsIncrease: 100
-  pointsIncreaseTimer: 30
+  initialPoints: 1
+  pointsIncrease: 13
+  pointsIncreaseTimer: 5
 --- !u!1 &567301523
 GameObject:
   m_ObjectHideFlags: 0
@@ -508,6 +508,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: befe2b76c350a254d88da44cd6133d8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  altarValues: 0000000010270000204e000030750000409c000050c3000060ea00007011010080380100
 --- !u!1 &586048062
 GameObject:
   m_ObjectHideFlags: 0
@@ -556,15 +557,15 @@ MonoBehaviour:
   skullPrefab: {fileID: 5545242666755698502, guid: 18575b80a4c7e444899f44bb4340c76b,
     type: 3}
   gateManager: {fileID: 272567126}
-  skullSpeed: 0.5
-  skullSpeedIncrease: 0.01
+  skullSpeed: 2.2
+  skullSpeedIncrease: 0.05
   angularVelocityRange:
   - 10
   - 60
-  secondsBetweenSkulls: 7
-  secondsBetweenSkullsDecrease: 0.001
+  secondsBetweenSkulls: 4
+  secondsBetweenSkullsDecrease: 0.01
   secondsBetweenSkullsMin: 0.5
-  powerUpChance: 0.05
+  powerUpChance: 0.1
   direction: 0
 --- !u!95 &586048065
 Animator:
@@ -800,15 +801,15 @@ MonoBehaviour:
   skullPrefab: {fileID: 5545242666755698502, guid: 18575b80a4c7e444899f44bb4340c76b,
     type: 3}
   gateManager: {fileID: 272567126}
-  skullSpeed: 1
-  skullSpeedIncrease: 0.01
+  skullSpeed: 2
+  skullSpeedIncrease: 0.05
   angularVelocityRange:
   - 10
   - 60
-  secondsBetweenSkulls: 5
-  secondsBetweenSkullsDecrease: 0.001
+  secondsBetweenSkulls: 3
+  secondsBetweenSkullsDecrease: 0.01
   secondsBetweenSkullsMin: 0.5
-  powerUpChance: 0.05
+  powerUpChance: 0.1
   direction: 1
 --- !u!95 &613681917
 Animator:
@@ -1239,9 +1240,9 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 755c65b2d99e1d641a86cf3766ba85be, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.574
+  m_Volume: 0.39
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1795,15 +1796,15 @@ MonoBehaviour:
   skullPrefab: {fileID: 5545242666755698502, guid: 18575b80a4c7e444899f44bb4340c76b,
     type: 3}
   gateManager: {fileID: 272567126}
-  skullSpeed: 0.2
-  skullSpeedIncrease: 0.005
+  skullSpeed: 1
+  skullSpeedIncrease: 0.05
   angularVelocityRange:
   - 10
   - 60
-  secondsBetweenSkulls: 7
-  secondsBetweenSkullsDecrease: 0.001
+  secondsBetweenSkulls: 6
+  secondsBetweenSkullsDecrease: 0.01
   secondsBetweenSkullsMin: 0.5
-  powerUpChance: 0.05
+  powerUpChance: 0.1
   direction: 3
 --- !u!95 &1556657292
 Animator:
@@ -2058,15 +2059,15 @@ MonoBehaviour:
   skullPrefab: {fileID: 5545242666755698502, guid: 18575b80a4c7e444899f44bb4340c76b,
     type: 3}
   gateManager: {fileID: 272567126}
-  skullSpeed: 0.5
-  skullSpeedIncrease: 0.005
+  skullSpeed: 1
+  skullSpeedIncrease: 0.05
   angularVelocityRange:
   - 10
   - 60
   secondsBetweenSkulls: 5
-  secondsBetweenSkullsDecrease: 0.001
+  secondsBetweenSkullsDecrease: 0.01
   secondsBetweenSkullsMin: 0.5
-  powerUpChance: 0.05
+  powerUpChance: 0.1
   direction: 2
 --- !u!95 &1848107428
 Animator:
