@@ -63,19 +63,23 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\AltairHandler.cs" />
-    <Compile Include="Assets\Scripts\AreYouSure.cs" />
-    <Compile Include="Assets\Scripts\AudioControll.cs" />
-    <Compile Include="Assets\Scripts\ButtonHelper.cs" />
-    <Compile Include="Assets\Scripts\GameMechanics.cs" />
-    <Compile Include="Assets\Scripts\GameOverHandler.cs" />
-    <Compile Include="Assets\Scripts\Gate.cs" />
-    <Compile Include="Assets\Scripts\GateManager.cs" />
-    <Compile Include="Assets\Scripts\HighScoreFetcher.cs" />
-    <Compile Include="Assets\Scripts\PowerUpManager.cs" />
-    <Compile Include="Assets\Scripts\Skull.cs" />
-    <Compile Include="Assets\Scripts\SkullCleanup.cs" />
-    <Compile Include="Assets\Scripts\TouchHandle.cs" />
+    <Compile Include="Assets\Scripts\AltarHandler.cs" />
+    <Compile Include="Assets\Scripts\HowToPlay\Leave.cs" />
+    <Compile Include="Assets\Scripts\HowToPlay\NextPage.cs" />
+    <Compile Include="Assets\Scripts\Main\AreYouSure.cs" />
+    <Compile Include="Assets\Scripts\Main\AudioControll.cs" />
+    <Compile Include="Assets\Scripts\Main\GameMechanics.cs" />
+    <Compile Include="Assets\Scripts\Main\GameOverHandler.cs" />
+    <Compile Include="Assets\Scripts\Main\Gate.cs" />
+    <Compile Include="Assets\Scripts\Main\GateManager.cs" />
+    <Compile Include="Assets\Scripts\Main\MainButtons.cs" />
+    <Compile Include="Assets\Scripts\Main\PowerUpManager.cs" />
+    <Compile Include="Assets\Scripts\Main\Skull.cs" />
+    <Compile Include="Assets\Scripts\Main\SkullCleanup.cs" />
+    <Compile Include="Assets\Scripts\Main\TouchHandle.cs" />
+    <Compile Include="Assets\Scripts\Menu\HighScoreFetcher.cs" />
+    <Compile Include="Assets\Scripts\Menu\MenuButtons.cs" />
+    <Compile Include="Assets\Scripts\MuteButton.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
