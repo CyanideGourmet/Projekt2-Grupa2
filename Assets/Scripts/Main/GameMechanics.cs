@@ -9,6 +9,7 @@ public class GameMechanics : MonoBehaviour
 
     public GateManager gateManager;
     public AltarHandler altarHandler;
+    
     public Text pointText;
     public Image[] candles;
     public int initialPoints = 100;
@@ -22,6 +23,14 @@ public class GameMechanics : MonoBehaviour
 
     private void Start()
     {
+        if (PlayerPrefs.GetInt("Music", 1) == 1)
+        {
+            GetComponent<AudioSource>().mute = false;
+        }
+        else
+        {
+            GetComponent<AudioSource>().mute = true;
+        }
         highScore = PlayerPrefs.GetInt("highscore", 0);
         pointReward = initialPoints;
         foreach (Image candle in candles)
@@ -37,6 +46,7 @@ public class GameMechanics : MonoBehaviour
     public void AddPoints(int pointsToAdd)
     {
         points += pointsToAdd;
+        if (points > highScore) { PlayerPrefs.SetInt("highscore", points); }
         pointText.text = points.ToString();
         altarHandler.SetAltar();
     }
@@ -46,6 +56,7 @@ public class GameMechanics : MonoBehaviour
         candles[health].sprite = Resources.Load<Sprite>("Candle_NoF");
         if(health == 0)
         {
+            GetComponent<AudioSource>().Play();
             gateManager.pause = true;
             Instantiate(Resources.Load<GameObject>("GameOver"), new Vector2(-15, 0), Quaternion.identity, GameObject.Find("Canvas").transform);
             if(points > highScore)

@@ -11,6 +11,7 @@ public class TouchHandle : MonoBehaviour
     public GameMechanics gameMechanics;
     public PowerUpManager powerUpManager;
     public GateManager gateManager;
+    public SkullSounds skullSounds;
     void Update()
     {
         if(Input.touchCount > 0)
@@ -28,6 +29,7 @@ public class TouchHandle : MonoBehaviour
                         {
                             if (gateManager.IsWanted(hitInformation.collider.GetComponent<Skull>().skullNr) && !hitInformation.collider.GetComponent<Skull>().IsPowerUp)
                             {
+                                skullSounds.GoodSkull();
                                 gateManager.NewWanted();
                                 gameMechanics.AddPoints(gameMechanics.pointReward);
                                 if(gameMechanics.MorePointActive)
@@ -50,7 +52,7 @@ public class TouchHandle : MonoBehaviour
                                         break;
                                 }
                             }
-                            else { gameMechanics.Damage(); }
+                            else { skullSounds.BadSkull(); gameMechanics.Damage(); }
                             hitInformation.collider.GetComponent<Skull>().Destroy();
                         }
                     }

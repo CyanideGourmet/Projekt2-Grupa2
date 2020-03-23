@@ -7,7 +7,7 @@ public class MenuButtons : MonoBehaviour
 {
     public void GameStart() 
     {
-        SceneManager.LoadScene("Main", LoadSceneMode.Single);
+        StartCoroutine(LoadScene("Main"));
     }
     public void Mute()
     {
@@ -15,10 +15,19 @@ public class MenuButtons : MonoBehaviour
     }
     public void Tutorial()
     {
-        SceneManager.LoadScene("HowToPlay", LoadSceneMode.Single);
+        StartCoroutine(LoadScene("HowToPlay"));
+    }
+    public void Sound()
+    {
+        GetComponent<AudioSource>().Play();
     }
     public void Exit()
     {
         Application.Quit();
+    }
+    private IEnumerator LoadScene(string scene)
+    {
+        yield return new WaitForSeconds(0.2f);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
     }
 }

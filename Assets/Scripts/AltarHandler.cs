@@ -10,6 +10,14 @@ public class AltarHandler : MonoBehaviour
     private static Dictionary<int, string> altars;
     void Start()
     {
+        if(PlayerPrefs.GetInt("Music", 1) == 1)
+        {
+            GetComponent<AudioSource>().mute = false;
+        }
+        else
+        {
+            GetComponent<AudioSource>().mute = true;
+        }
         if(altars == null)
         {
             altars = new Dictionary<int, string>
@@ -38,6 +46,8 @@ public class AltarHandler : MonoBehaviour
                 filename = pair.Value;
             }
         }
-        GetComponent<Image>().sprite = Resources.Load<Sprite>(filename);
+        Sprite sprite = Resources.Load<Sprite>(filename);
+        if (GetComponent<Image>().sprite != sprite) { GetComponent<AudioSource>().Play(); } 
+        GetComponent<Image>().sprite = sprite;
     }
 }

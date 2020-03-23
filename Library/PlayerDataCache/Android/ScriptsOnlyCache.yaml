@@ -17,6 +17,7 @@ ScriptsOnlyBuild:
     - PowerUpManager
     - Skull
     - SkullCleanup
+    - SkullSounds
     - TouchHandle
     Unity.2D.Tilemap.Editor.dll:
     - UnityEditor.Tilemaps.GridPaintingState
@@ -61,6 +62,8 @@ ScriptsOnlyBuild:
     - Class: 74
       Script: {instanceID: 0}
     - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
       Script: {instanceID: 0}
     - Class: 91
       Script: {instanceID: 0}
@@ -171,6 +174,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13040}
     - Class: 114
       Script: {instanceID: 13108}
+    - Class: 114
+      Script: {instanceID: 17634}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -297,7 +302,7 @@ ScriptsOnlyBuild:
     className: TMP_Dropdown
   - hash:
       serializedVersion: 2
-      Hash: e3562ae1fe8e8167cf978249648aa3fd
+      Hash: 549eb74578ac2d5dc9e604a6069f3c64
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: GameMechanics
@@ -477,7 +482,7 @@ ScriptsOnlyBuild:
     className: TMP_SpriteAsset
   - hash:
       serializedVersion: 2
-      Hash: 08dec2ab84e05dd5e997c4cf6a56c888
+      Hash: 2c624a6af02ec6879161f3cd97d77004
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: SkullCleanup
@@ -549,7 +554,7 @@ ScriptsOnlyBuild:
     className: RawImage
   - hash:
       serializedVersion: 2
-      Hash: 03ac1c8176f9c21330361c13c8057047
+      Hash: 207f620ba4019382aca7a87cb7f16aef
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: TouchHandle
@@ -787,6 +792,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: PlayableTrack
+  - hash:
+      serializedVersion: 2
+      Hash: f941634177028fa81e4beeab14c0edec
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: SkullSounds
   platform: 13
   scenePathNames:
   - Assets/Scenes/Menu.unity

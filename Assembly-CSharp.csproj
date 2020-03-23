@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\Menu\HighScoreFetcher.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuButtons.cs" />
     <Compile Include="Assets\Scripts\MuteButton.cs" />
+    <Compile Include="Assets\Scripts\SkullSounds.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
