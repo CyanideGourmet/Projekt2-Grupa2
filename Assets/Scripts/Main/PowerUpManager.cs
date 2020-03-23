@@ -8,15 +8,9 @@ public class PowerUpManager : MonoBehaviour
 {
     public GateManager gateManager;
     public GameMechanics gameMechanics;
-    public Text speedText;
-    private float speedTime = 0;
     private int speedCount = 0;
     private int[] slowCount = new int[4] { 0, 0, 0, 0 };
     private int[] closeCount = new int[4] { 0, 0, 0, 0 };
-    private void Update()
-    {
-        speedText.text = Convert.ToString(Math.Round(speedTime));
-    }
     public void SpeedPowerUp()
     {
         speedCount++;
@@ -33,10 +27,10 @@ public class PowerUpManager : MonoBehaviour
         {
             while(gateManager.pause)
             {
-                speedTime = time;
+                
                 yield return null;
             }
-            speedTime = time;
+            
             yield return null;
         }
         if (speedCount == 1)
@@ -46,7 +40,6 @@ public class PowerUpManager : MonoBehaviour
                 gate.SpeedUpActive = false;
             }
             gameMechanics.MorePointActive = false;
-            speedTime = 0;
         }
         speedCount--;
     }
@@ -68,29 +61,13 @@ public class PowerUpManager : MonoBehaviour
             while (gateManager.pause)
             {
                 yield return null;
-                foreach (Gate gate in gateManager.gates)
-                {
-                    if(gate.SlowDownActive)
-                    {
-                        if(time >= 0) { gate.slowDownTime = time; }
-                        else { gate.slowDownTime = 0; }
-                    }
-                }
+
             }
             yield return null;
-            foreach (Gate gate in gateManager.gates)
-            {
-                if (gate.SlowDownActive)
-                {
-                    if (time >= 0) { gate.slowDownTime = time; }
-                    else { gate.slowDownTime = 0; }
-                }
-            }
         }
         if (slowCount[gateNr] == 1)
         {
             gateManager.gates[gateNr].SlowDownActive = false;
-            gateManager.gates[gateNr].slowDownTime = 0;
         }
         slowCount[gateNr]--;
     }
@@ -109,37 +86,15 @@ public class PowerUpManager : MonoBehaviour
     {
         for (float time = 5; time >= 0; time -= Time.deltaTime)
         {
-            int temp = 0;
             while (gateManager.pause)
             {
                 yield return null;
-                temp = 0;
-                foreach (Gate gate in gateManager.gates)
-                {
-                    if (!gate.Active && closeCount[temp] > 0)
-                    {
-                        if (time >= 0) { gate.closeTime = time; }
-                        else { gate.closeTime = 0; }
-                    }
-                    temp++;
-                }
             }
             yield return null;
-            temp = 0;
-            foreach (Gate gate in gateManager.gates)
-            {
-                if (!gate.Active && closeCount[temp] > 0)
-                {
-                    if (time >= 0) { gate.closeTime = time; }
-                    else { gate.closeTime = 0; }
-                }
-                temp++;
-            }
         }
         if (closeCount[gateNr] == 1)
         {
             gateManager.gates[gateNr].Active = true;
-            gateManager.gates[gateNr].closeTime = 0;
         }
         closeCount[gateNr]--;
     }

@@ -28,7 +28,8 @@ public class Gate : MonoBehaviour
         //Public
     public GameObject skullPrefab;
     public GateManager gateManager;
-    public GameObject powerupIndicator;
+    public Sprite open;
+    public Sprite closed;
     public float skullSpeed = 2;
     public float skullSpeedIncrease = 0.01f;                        //Per second
     public float[] angularVelocityRange = new float[2] { 0, 0 };
@@ -39,11 +40,30 @@ public class Gate : MonoBehaviour
 
     public int nextSkull { get; set; }
     public MovementDir direction;
-    public bool Active { get; set; } = false;
+
+    public bool active;
+    public bool Active
+    {
+        get
+        {
+            return active;
+        }
+        set
+        {
+            active = value;
+            if (active)
+            {
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = open;
+            }
+            else
+            {
+                transform.GetChild(0).GetComponent<SpriteRenderer>().sprite = closed;
+            }
+            
+        }
+    }
     public bool SpeedUpActive { get; set; } = false;
     public bool SlowDownActive { get; set; } = false;
-    public float slowDownTime { get; set; } = 0;
-    public float closeTime { get; set; } = 0;
 
     //Methods
         //Private
@@ -54,8 +74,6 @@ public class Gate : MonoBehaviour
     }
     private void Update()
     {
-        powerupIndicator.transform.GetChild(0).GetChild(0).GetComponent<Text>().text = Convert.ToString(Math.Round(slowDownTime));
-        powerupIndicator.transform.GetChild(1).GetChild(0).GetComponent<Text>().text = Convert.ToString(Math.Round(closeTime));
         if (!gateManager.pause)
         {
             if (secondsBetweenSkulls > secondsBetweenSkullsMin) { secondsBetweenSkulls -= secondsBetweenSkullsDecrease * Time.deltaTime; }
