@@ -16,9 +16,11 @@ public class Skull : MonoBehaviour
     private PowerUpType powerType;
         //Public
     public Gate gate;
+    public GameObject deadAnim;
     public bool IsPowerUp         { get { return isPowerUp; } protected set { isPowerUp = value; } }
     public PowerUpType PowerType  { get { return powerType; } protected set { powerType = value; } }
     public int skullNr { get; set; }
+    public SkullType skullType { get; set; }
 
     //Methods
         //private
@@ -45,13 +47,26 @@ public class Skull : MonoBehaviour
         {
             case PowerUpType.SPEED:
                 this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BUFF_3");
+                skullType = SkullType.RED;
                 break;
             case PowerUpType.SLOW:
                 this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BUFF_2");
+                skullType = SkullType.GREEN;
                 break;
             case PowerUpType.CLOSE:
                 this.GetComponent<SpriteRenderer>().sprite = Resources.Load<Sprite>("BUFF_1");
+                skullType = SkullType.BLUE;
                 break;
         }
+    }
+    public IEnumerator Fade(AnimationType animationT)
+    {
+        gate.SkullDestroyed(this);
+        yield return new WaitForSeconds(0.14f);
+        GameObject deadAnimation = Instantiate(deadAnim, this.transform.position, this.transform.rotation);
+        deadAnimation.GetComponent<SkullAnimationManager>().animationType = animationT;
+        deadAnimation.GetComponent<SkullAnimationManager>().skullType = skullType;
+        deadAnimation.GetComponent<SkullAnimationManager>().Play();
+        Destroy(this.gameObject);
     }
 }

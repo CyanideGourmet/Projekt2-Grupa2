@@ -22,6 +22,14 @@ public class GateManager : MonoBehaviour
     
     private void Start()
     {
+        if (PlayerPrefs.GetInt("Music", 1) == 1)
+        {
+            GetComponent<AudioSource>().mute = false;
+        }
+        else
+        {
+            GetComponent<AudioSource>().mute = true;
+        }
         gates = new Gate[4];
         gates[0] = gate1;
         gates[1] = gate2;
@@ -30,16 +38,20 @@ public class GateManager : MonoBehaviour
         gate1.Active = true;
         NewWanted();
         StartCoroutine(Shake(0, 0));
-        StartCoroutine(Shake(0, 4));
+        StartCoroutine(Shake(0, 3));
+        StartCoroutine(Sound(3));
         StartCoroutine(OpenGate(1, gate2OpenTime));
-        StartCoroutine(Shake(1, gate2OpenTime - 3));
-        StartCoroutine(Shake(1, gate2OpenTime + 2));
+        StartCoroutine(Shake(1, gate2OpenTime - 1));
+        StartCoroutine(Shake(1, gate2OpenTime + 4));
+        StartCoroutine(Sound(gate2OpenTime + 4));
         StartCoroutine(OpenGate(2, gate3aOpenTime));
-        StartCoroutine(Shake(2, gate3aOpenTime - 3));
-        StartCoroutine(Shake(2, gate3aOpenTime + 2));
+        StartCoroutine(Shake(2, gate3aOpenTime - 1));
+        StartCoroutine(Shake(2, gate3aOpenTime + 4));
+        StartCoroutine(Sound(gate3aOpenTime + 4));
         StartCoroutine(OpenGate(3, gate3bOpenTime));
-        StartCoroutine(Shake(3, gate3bOpenTime - 3));
-        StartCoroutine(Shake(3, gate3bOpenTime + 2));
+        StartCoroutine(Shake(3, gate3bOpenTime - 1));
+        StartCoroutine(Shake(3, gate3bOpenTime + 4));
+        StartCoroutine(Sound(gate3bOpenTime + 4));
     }
     IEnumerator QueueWanted()
     {
@@ -93,5 +105,14 @@ public class GateManager : MonoBehaviour
             yield return null;
         }
         gates[gateNr].GetComponent<Animator>().SetBool("Shaking", !gates[gateNr].GetComponent<Animator>().GetBool("Shaking"));
+    }
+    private IEnumerator Sound(float time)
+    {
+        for (float timer = time; timer >= 0; timer -= Time.deltaTime)
+        {
+            while (pause) { yield return null; }
+            yield return null;
+        }
+        GetComponent<AudioSource>().Play();
     }
 }

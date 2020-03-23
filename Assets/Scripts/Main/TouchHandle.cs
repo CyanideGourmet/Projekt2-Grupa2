@@ -36,10 +36,12 @@ public class TouchHandle : MonoBehaviour
                                 {
                                     gameMechanics.AddPoints(Convert.ToInt32(gameMechanics.pointReward * 0.5f));
                                 }
+                                StartCoroutine(hitInformation.collider.GetComponent<Skull>().Fade(AnimationType.POINT));
                             }
                             else if(hitInformation.collider.GetComponent<Skull>().IsPowerUp)
                             {
-                                switch(hitInformation.collider.GetComponent<Skull>().PowerType)
+                                skullSounds.GoodSkull();
+                                switch (hitInformation.collider.GetComponent<Skull>().PowerType)
                                 {
                                     case PowerUpType.SLOW:
                                         powerUpManager.SlowPowerUp();
@@ -51,9 +53,14 @@ public class TouchHandle : MonoBehaviour
                                         powerUpManager.CloseGatePowerUp();
                                         break;
                                 }
+                                StartCoroutine(hitInformation.collider.GetComponent<Skull>().Fade(AnimationType.POWER));
                             }
-                            else { skullSounds.BadSkull(); gameMechanics.Damage(); }
-                            hitInformation.collider.GetComponent<Skull>().Destroy();
+                            else
+                            {
+                                skullSounds.BadSkull();
+                                gameMechanics.Damage();
+                                StartCoroutine(hitInformation.collider.GetComponent<Skull>().Fade(AnimationType.DEATH));
+                            }
                         }
                     }
                 }

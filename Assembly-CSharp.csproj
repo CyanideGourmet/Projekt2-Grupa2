@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\AltarHandler.cs" />
+    <Compile Include="Assets\Scripts\CreditsButtons.cs" />
     <Compile Include="Assets\Scripts\HowToPlay\Leave.cs" />
     <Compile Include="Assets\Scripts\HowToPlay\NextPage.cs" />
     <Compile Include="Assets\Scripts\Main\AreYouSure.cs" />
@@ -80,9 +81,13 @@
     <Compile Include="Assets\Scripts\Menu\HighScoreFetcher.cs" />
     <Compile Include="Assets\Scripts\Menu\MenuButtons.cs" />
     <Compile Include="Assets\Scripts\MuteButton.cs" />
+    <Compile Include="Assets\Scripts\SkullAnimationManager.cs" />
     <Compile Include="Assets\Scripts\SkullSounds.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Animation.Runtime">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Animation.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
@@ -96,20 +101,50 @@
     <Reference Include="Unity.Timeline">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Animation.Triangle.Runtime">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Animation.Triangle.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="PsdPlugin">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/PsdPlugin.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.Mathematics">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Psdimporter.Editor">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Psdimporter.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEngineBridge.001">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.InternalAPIEngineBridge.001.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.2D.Sprite.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Runtime">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Common.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.2D.Tilemap.Editor">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Tilemap.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.2D.Animation.Editor">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Animation.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics.Editor">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.Mathematics.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Common.Editor">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.2D.Common.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InternalAPIEditorBridge.001">
+      <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/Unity.InternalAPIEditorBridge.001.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/GitHub/Projekt2-Grupa2/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>

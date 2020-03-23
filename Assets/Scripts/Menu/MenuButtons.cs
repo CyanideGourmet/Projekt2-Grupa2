@@ -13,6 +13,10 @@ public class MenuButtons : MonoBehaviour
     {
         PlayerPrefs.SetInt("Music", (PlayerPrefs.GetInt("Music", 1)+1)%2);
     }
+    public void Credits()
+    {
+        StartCoroutine(LoadScene("Credits"));
+    }
     public void Tutorial()
     {
         StartCoroutine(LoadScene("HowToPlay"));
